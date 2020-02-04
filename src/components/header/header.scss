@@ -92,6 +92,13 @@
     margin-top: 20px;
 }
 
+.btn-medium {
+    font-size: 20px;
+}
+
+.btn-small {
+    font-size: 18px;
+}
 
 
 
@@ -100,49 +107,16 @@
 
 
 
-
-
-
-@media only screen and (max-width: 870px) {
-    .header-logo {
-        box-sizing: border-box;
-        
-        margin-top: 450px
-        
-    }
-
-    .header-content {
-        flex-direction: column;
-    }
-    
-
-    .main-header {
-        height: 580px;
-    }
-
+@media only screen and (max-width: 1000px) {
     .main-nav {
-        text-align: center;
-        width: 100%;
-        
-        
+        display: none;
     }
 
-    .main-nav li {
-        display: block;
-    }
-
-    .ul-nav {
-        
+    .img-logo {
+        justify-content: center;
+        align-items: center;
         
     }
-
-    .main-header {
-        position: absolute;
-    }
-
-    
-
-
 }
 
 

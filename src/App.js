@@ -1,26 +1,30 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
+import { GlobalStyles } from './Global';
+import { theme } from './Theme';
 
+
+// Components
 import Routes from './routes';
 import Header from './components/header/index';
-import Footer from './components/footer/index';
 
-class App extends Component {
-    render() {
+function App() {
         return (
-            <div className="App">
-                <BrowserRouter>
+            <ThemeProvider theme={theme}>
+                <>
+                <GlobalStyles />
+                    <BrowserRouter>
 
-                    <Header />
+                        <Header />
 
-                    <Routes />
-
-                    
-                    
-                </BrowserRouter>                    
-            </div>
+                        <Routes />
+                        
+                    </BrowserRouter>                    
+                </>
+            </ThemeProvider>
         )
-    }
+    
 }
 
 export default App;

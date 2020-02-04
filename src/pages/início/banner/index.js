@@ -27,7 +27,7 @@ export default class Banner extends Component {
                     </div>
 
                     <div className="banner-imageee">
-                        <img src={Logo} className="image-banneeer" />
+                        <img src={Logo} className="image-banneeer" alt="cnsf"/>
                     </div>
                     
 

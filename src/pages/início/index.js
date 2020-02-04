@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 
-
 // Styles
 import './início.scss';
 
@@ -12,9 +11,6 @@ import Contador from './contador/index';
 import Footer from '../../components/footer/index';
 import Banner from './banner/index';
 import Contato_Home from './contato/index';
-
-
-
 
 export default  class Início extends Component {
     render() {
@@ -34,7 +30,6 @@ export default  class Início extends Component {
                     <Contato_Home />
 
                     <Footer />
-
 
             </div>
         )

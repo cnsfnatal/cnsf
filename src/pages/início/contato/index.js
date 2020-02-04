@@ -20,15 +20,22 @@ function Contato_Home(data) {
 
 
                 <div className="form-contato">
+                    <div className="form-title-container-home">
+                        <h1 className="title-form">Faça sua <br></br> pré-matrícula</h1>
+                    </div>
+                    
+                    <form className="form-container" onSubmit={handleSubmit}>
 
-                    <form id="new-post" onSubmit={handleSubmit}>
-
-                        <h1 className="title-form">Faça a sua <br />pré-matrícula</h1>
-                        
-                        
-                        
                         <input
-                            className="all"
+                            className="input-form-home"
+                            type="text"
+                            name="email"
+                            placeholder="Seu email"
+                            required
+                        />
+
+                        <input
+                            className="input-form-home"
                             type="text"
                             name="nome"
                             placeholder="Seu nome"
@@ -36,29 +43,23 @@ function Contato_Home(data) {
                         />
 
                         <input
-                            className="all"
+                            className="input-form-home"
                             type="text"
-                            name="email"
-                            placeholder="Seu email"
-                            required
-
-                        />
-                        <input
-                            className="all"
-                            type="text"
-                            name="telefone"
-                            placeholder="Telefone"
+                            name="escola"
+                            placeholder="Nome da escola"
                             required
                         />
+                        
                         <input
-                            className="msg"
+                            className="msg-form-home"
                             type="text"
                             name="mensagem"
                             placeholder="Mensagem"
-                            
+                            required
                         />
+                        
 
-                        <button  type="submit" className="btn-enviar">Enviar</button>
+                        <button type="submit" className="btn-enviar-form-home">Enviar</button>
                     </form>
                 </div>
 
