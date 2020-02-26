@@ -7,6 +7,10 @@ export { default } from "./Menu";
 
 // eslint-disable-next-line import/first
 export const StyledMenu = styled.nav`
+  img {
+    margin-top: -10px;
+  }
+
   display: flex;
   flex-direction: column;
   background: ${({ theme }) => theme.primaryLight};
@@ -27,8 +31,7 @@ export const StyledMenu = styled.nav`
   a {
     font-size: 2rem;
     text-transform: uppercase;
-    margin: 0;
-    margin-top: 8px;
+    margin-top: 2px;
     font-weight: bold;
     letter-spacing: 0.5rem;
     color: ${({ theme }) => theme.primaryDark};
