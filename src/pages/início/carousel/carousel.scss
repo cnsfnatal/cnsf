@@ -1,29 +1,24 @@
 .container-carousel {
-    height: 640px;
-    width: 100%;
-   
-    margin: auto;
+  height: 640px;
+  width: 100%;
 
-    background-image: url(../../../img/background.png);
-    background-color: rgb(118, 233, 198);
+  margin: auto;
 
+  background-image: url(../../../img/background.png);
+  background-color: rgb(118, 233, 198);
 }
 
 .carousel {
-    width: 60%;
-    margin: auto;
+  width: 60%;
+  margin: auto;
 }
 
 @media only screen and (max-width: 870px) {
-    .container-carousel {
-        height: 400px;
-    }
+  .container-carousel {
+    height: 400px;
+  }
 
-
-    .carousel {
-        width: 90%;
-
-        
-        
-    }
+  .carousel {
+    width: 90%;
+  }
 }

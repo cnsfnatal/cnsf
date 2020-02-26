@@ -1,15 +1,7 @@
-import React, { Component } from 'react';
+import React from "react";
 
-import './notíciais.css'
+import "./notíciais.css";
 
-export default class Notíciais extends Component {
-    render() {
-        return (
-            <div>
-                <h1>
-                    notíciais
-                </h1>
-            </div>
-        )
-    }
+export default function Notíciais() {
+  return <h1>notíciais</h1>;
 }
