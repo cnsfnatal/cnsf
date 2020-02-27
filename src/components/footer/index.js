@@ -26,7 +26,10 @@ export default class Footer extends Component {
 
           <div className="footer-logos">
             <div className="facebook-content">
-              <a href="https://facebook.com" className="link">
+              <a
+                href="https://www.facebook.com/cnsfnataloficial/"
+                className="link"
+              >
                 <img
                   src={Facebook}
                   className="facebook-logo"
