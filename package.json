@@ -2,7 +2,7 @@
   "name": "front_end",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://cnsfnatal.github.io/cnsf",
+  "homepage": "http://cnsfnatal.github.io/cnsf/",
   "dependencies": {
     "google-maps-react": "^2.0.2",
     "node-sass": "^4.13.0",
