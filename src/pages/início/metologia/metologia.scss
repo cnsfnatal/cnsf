@@ -1,0 +1,91 @@
+.container-content {
+    height: 765px;
+    width: 100%;
+    background: white;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+    background-image: url(../../../img/background.png);
+    background-position: top;
+}
+
+.container-text {
+    width: 550px;
+    height: 265px;
+    
+    background: #ffffff;
+
+    border-radius: 7px;
+}
+
+.title-content {
+    text-align: left;
+    letter-spacing: 1.5px;
+    margin-left: 12px;
+    margin-top: 12px;
+
+    font-size: 42px;
+    color: rgb(207, 53, 53);
+}
+
+.text-content {
+    text-align: justify;
+    margin-top: 12px;
+    margin-left: 12px;
+    margin-right: 12px;
+    letter-spacing: 1.5px;
+    color: rgb(53, 41, 41);
+
+}
+
+.a-btn {
+    text-align: center;
+}
+
+.somos-button {
+    margin-top: 12px;
+    margin-left: 12px;
+
+    text-align: center;
+}
+
+
+
+.container-image {
+    margin-top: 150px;
+    width: 450px;
+    height: 550px;
+    
+    
+}
+
+.image-content {
+    width: 390px;
+    height: 565px;
+}
+
+@media only screen and (max-width: 870px) {
+    .container-content {
+        flex-direction: column;
+        justify-content: space-around;
+        
+
+        height: 1200px;
+    }
+
+    .container-text {
+        
+        width: 90%;
+        height: 420px;
+    }
+
+    .image-content {
+        height: 450px;
+        width: 300px;
+
+        
+    }
+}

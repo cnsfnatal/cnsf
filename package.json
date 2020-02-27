@@ -1,0 +1,44 @@
+{
+  "name": "front_end",
+  "version": "0.5.0",
+  "private": false,
+  "homepage": "https://cnsfnatal.github.io/cnsf",
+  "dependencies": {
+    "google-maps-react": "^2.0.2",
+    "node-sass": "^4.13.0",
+    "react": "^16.12.0",
+    "react-awesome-button": "^6.3.1",
+    "react-awesome-slider": "^2.2.1",
+    "react-burger-menu": "^2.6.13",
+    "react-dom": "^16.12.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.2.0",
+    "styled-components": "^4.4.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "gh-pages": "^2.1.1"
+  }
+}

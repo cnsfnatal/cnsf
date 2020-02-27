@@ -1,0 +1,123 @@
+.main-header {
+    height: 95px;
+    width: 100%;
+    position: fixed;
+    
+    background: #1b113b80;
+
+    z-index: 100;
+  
+}
+
+.header-content {
+    width: 100%;
+    margin: 0 auto;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    
+    
+}
+
+
+
+
+.ul-nav {
+    list-style: none;
+    position: relative;
+    margin-top: 120px;
+    
+}
+
+.ul-nav li {
+    width: 150px;
+    float: left;
+    margin-top: 1.5px;
+    
+}
+
+.ul-nav li ul  {
+    list-style: none;
+}
+
+.ul-nav ul {
+    
+    visibility: hidden;
+}
+
+
+
+ .list-colegio:hover .drop-colegio {
+    visibility: visible;
+    
+}
+
+.list-serviços:hover .drop-serviços {
+    visibility: visible;
+}
+
+
+
+.drop-metologia {
+    margin-left: 25px;
+}
+.drop-estrutura {
+    margin-left: 25px;
+}
+.drop-fundação {
+    margin-left: 25px;
+}
+.drop-esportes {
+    margin-left: 25px;
+}
+.drop-dança {
+    margin-left: 25px;
+}
+.drop-ballet {
+    margin-left: 25px;
+}
+
+
+
+
+.header-logo {
+    box-sizing: border-box;
+    
+    
+}
+.img-logo{
+    height: 108px;
+    margin-top: 20px;
+}
+
+.btn-medium {
+    font-size: 20px;
+}
+
+.btn-small {
+    font-size: 18px;
+}
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 1000px) {
+    .main-nav {
+        display: none;
+    }
+
+    .img-logo {
+        justify-content: center;
+        align-items: center;
+        
+    }
+}
+
+
+
