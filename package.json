@@ -4,6 +4,7 @@
   "private": false,
   "homepage": "https://cnsfnatal.github.io/cnsf",
   "dependencies": {
+    "axios": "^0.19.2",
     "google-maps-react": "^2.0.2",
     "node-sass": "^4.13.0",
     "react": "^16.12.0",
