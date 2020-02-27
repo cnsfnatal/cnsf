@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/cnsf/static/css/main.91fcf66a.chunk.css",
+    "main.js": "/cnsf/static/js/main.4f93d413.chunk.js",
+    "main.js.map": "/cnsf/static/js/main.4f93d413.chunk.js.map",
+    "runtime-main.js": "/cnsf/static/js/runtime-main.db14919a.js",
+    "runtime-main.js.map": "/cnsf/static/js/runtime-main.db14919a.js.map",
+    "static/js/2.5506ec19.chunk.js": "/cnsf/static/js/2.5506ec19.chunk.js",
+    "static/js/2.5506ec19.chunk.js.map": "/cnsf/static/js/2.5506ec19.chunk.js.map",
+    "index.html": "/cnsf/index.html",
+    "precache-manifest.9f6d1f8ceeeb94df51eb014370dd7304.js": "/cnsf/precache-manifest.9f6d1f8ceeeb94df51eb014370dd7304.js",
+    "service-worker.js": "/cnsf/service-worker.js",
+    "static/css/main.91fcf66a.chunk.css.map": "/cnsf/static/css/main.91fcf66a.chunk.css.map",
+    "static/media/1.jpg": "/cnsf/static/media/1.ae9e21f5.jpg",
+    "static/media/2.jpg": "/cnsf/static/media/2.23f4f6c1.jpg",
+    "static/media/3.jpg": "/cnsf/static/media/3.9e90b401.jpg",
+    "static/media/metologia.scss": "/cnsf/static/media/background.a7eb4192.png",
+    "static/media/facebook.png": "/cnsf/static/media/facebook.8f5ce275.png",
+    "static/media/logo-cnsf.png": "/cnsf/static/media/logo-cnsf.40dc8dce.png",
+    "static/media/metologia-image.png": "/cnsf/static/media/metologia-image.776ca80c.png",
+    "static/media/contato.scss": "/cnsf/static/media/scholae_background2.a7eb4192.png",
+    "static/media/school.svg": "/cnsf/static/media/school.d83f15b8.svg",
+    "static/media/study.svg": "/cnsf/static/media/study.855adeac.svg",
+    "static/media/teacher.svg": "/cnsf/static/media/teacher.fd0dee78.svg",
+    "static/media/training.svg": "/cnsf/static/media/training.e44c8f30.svg",
+    "static/media/twitter.png": "/cnsf/static/media/twitter.0251d8ee.png",
+    "static/media/video_slide.mp4": "/cnsf/static/media/video_slide.3773db94.mp4"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.db14919a.js",
+    "static/js/2.5506ec19.chunk.js",
+    "static/css/main.91fcf66a.chunk.css",
+    "static/js/main.4f93d413.chunk.js"
+  ]
+}
