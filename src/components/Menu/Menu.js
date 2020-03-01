@@ -15,7 +15,7 @@ import buttonStyle from "../header/react-awesome-button-master/src/styles/themes
 const Menu = ({ open, setOpen }) => {
   return (
     <StyledMenu open={open}>
-      <Link to="/cnsf">
+      <Link to="/">
         <img
           src={logo}
           alt="logotipo do Cólegio"
@@ -23,56 +23,56 @@ const Menu = ({ open, setOpen }) => {
         />
       </Link>
 
-      <Link to="/cnsf/metologia" onClick={() => setOpen(!open)}>
+      <Link to="/metologia" onClick={() => setOpen(!open)}>
         <AwesomeButton type="primary" size="large">
           Metologia
         </AwesomeButton>
       </Link>
 
-      <Link to="/cnsf/fundação" onClick={() => setOpen(!open)}>
+      <Link to="/fundação" onClick={() => setOpen(!open)}>
         <AwesomeButton type="primary" size="large">
           Fundação
         </AwesomeButton>
       </Link>
 
-      <Link to="/cnsf/estrutura" onClick={() => setOpen(!open)}>
+      <Link to="/estrutura" onClick={() => setOpen(!open)}>
         <AwesomeButton type="primary" size="large">
           Estrutura
         </AwesomeButton>
       </Link>
 
-      <Link to="/cnsf/galeria" onClick={() => setOpen(!open)}>
+      <Link to="/galeria" onClick={() => setOpen(!open)}>
         <AwesomeButton type="primary" size="large">
           Galeria
         </AwesomeButton>
       </Link>
 
-      <Link to="/cnsf/contato" onClick={() => setOpen(!open)}>
+      <Link to="/contato" onClick={() => setOpen(!open)}>
         <AwesomeButton type="primary" size="large">
           Contato
         </AwesomeButton>
       </Link>
-      <Link to="/cnsf/noticiais" onClick={() => setOpen(!open)}>
+      <Link to="/noticiais" onClick={() => setOpen(!open)}>
         <AwesomeButton type="primary" size="large">
           Notíciais
         </AwesomeButton>
       </Link>
-      <Link to="/cnsf/esportes" onClick={() => setOpen(!open)}>
+      <Link to="/esportes" onClick={() => setOpen(!open)}>
         <AwesomeButton type="primary" size="large">
           Esportes
         </AwesomeButton>
       </Link>
-      <Link to="/cnsf/dança" onClick={() => setOpen(!open)}>
+      <Link to="/dança" onClick={() => setOpen(!open)}>
         <AwesomeButton type="primary" size="large">
           Dança
         </AwesomeButton>
       </Link>
-      <Link to="/cnsf/ballet" onClick={() => setOpen(!open)}>
+      <Link to="/ballet" onClick={() => setOpen(!open)}>
         <AwesomeButton type="primary" size="large">
           Ballet
         </AwesomeButton>
       </Link>
-      <Link to="/cnsf/pastoral" onClick={() => setOpen(!open)}>
+      <Link to="/pastoral" onClick={() => setOpen(!open)}>
         <AwesomeButton type="primary" size="large">
           Pastoral
         </AwesomeButton>

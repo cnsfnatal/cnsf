@@ -16,17 +16,17 @@ import Pastoral from "./pages/Pastoral/index";
 function Routes() {
   return (
     <Switch>
-      <Route path="/cnsf" exact component={Início} />
-      <Route path="/cnsf/noticiais" component={Notíciais} />
-      <Route path="/cnsf/contato" component={Contato} />
-      <Route path="/cnsf/esportes" component={Esportes} />
-      <Route path="/cnsf/dança" component={Dança} />
-      <Route path="/cnsf/ballet" component={Ballet} />
-      <Route path="/cnsf/pastoral" component={Pastoral} />
-      <Route path="/cnsf/galeria" component={Galeria} />
-      <Route path="/cnsf/metologia" component={Metologia} />
-      <Route path="/cnsf/fundação" component={Fundação} />
-      <Route path="/cnsf/estrutura" component={Estrutura} />
+      <Route path="/" exact component={Início} />
+      <Route path="/noticiais" component={Notíciais} />
+      <Route path="/contato" component={Contato} />
+      <Route path="/esportes" component={Esportes} />
+      <Route path="/dança" component={Dança} />
+      <Route path="/ballet" component={Ballet} />
+      <Route path="/pastoral" component={Pastoral} />
+      <Route path="/galeria" component={Galeria} />
+      <Route path="/metologia" component={Metologia} />
+      <Route path="/fundação" component={Fundação} />
+      <Route path="/estrutura" component={Estrutura} />
     </Switch>
   );
 }

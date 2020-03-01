@@ -36,7 +36,7 @@ export default function Header() {
             </div>
 
             <div className="header-logo">
-              <Link to="/cnsf" className="a-logo">
+              <Link to="/" className="a-logo">
                 <img src={logo} className="img-logo" alt=""></img>
               </Link>
             </div>
@@ -54,7 +54,7 @@ export default function Header() {
 
                   <ul className="drop-colegio">
                     <li>
-                      <Link to="/cnsf/metologia" className="drop-metologia">
+                      <Link to="/metologia" className="drop-metologia">
                         <AwesomeButton
                           type="primary"
                           size="small"
@@ -65,7 +65,7 @@ export default function Header() {
                       </Link>
                     </li>
                     <li>
-                      <Link to="/cnsf/estrutura" className="drop-estrutura">
+                      <Link to="/estrutura" className="drop-estrutura">
                         <AwesomeButton
                           type="primary"
                           size="small"
@@ -76,7 +76,7 @@ export default function Header() {
                       </Link>
                     </li>
                     <li>
-                      <Link to="/cnsf/fundação" className="drop-fundação">
+                      <Link to="/fundação" className="drop-fundação">
                         <AwesomeButton
                           type="primary"
                           size="small"
@@ -90,7 +90,7 @@ export default function Header() {
                 </li>
 
                 <li>
-                  <Link to="/cnsf/noticiais">
+                  <Link to="/noticiais">
                     <AwesomeButton
                       type="primary"
                       size="medium"
@@ -112,7 +112,7 @@ export default function Header() {
 
                   <ul className="drop-serviços">
                     <li>
-                      <Link to="/cnsf/esportes" className="drop-esportes">
+                      <Link to="/esportes" className="drop-esportes">
                         <AwesomeButton
                           type="primary"
                           size="small"
@@ -123,7 +123,7 @@ export default function Header() {
                       </Link>
                     </li>
                     <li>
-                      <Link to="/cnsf/dança" className="drop-dança">
+                      <Link to="/dança" className="drop-dança">
                         <AwesomeButton
                           type="primary"
                           size="small"
@@ -134,7 +134,7 @@ export default function Header() {
                       </Link>
                     </li>
                     <li>
-                      <Link to="/cnsf/ballet" className="drop-ballet">
+                      <Link to="/ballet" className="drop-ballet">
                         <AwesomeButton
                           type="primary"
                           size="small"
@@ -148,7 +148,7 @@ export default function Header() {
                 </li>
 
                 <li>
-                  <Link to="/cnsf/pastoral">
+                  <Link to="/pastoral">
                     <AwesomeButton
                       type="primary"
                       size="medium"
@@ -160,7 +160,7 @@ export default function Header() {
                 </li>
 
                 <li>
-                  <Link to="/cnsf/galeria">
+                  <Link to="/galeria">
                     <AwesomeButton
                       type="primary"
                       size="medium"
@@ -172,7 +172,7 @@ export default function Header() {
                 </li>
 
                 <li>
-                  <Link to="/cnsf/contato">
+                  <Link to="/contato">
                     <AwesomeButton
                       type="primary"
                       size="medium"

@@ -2,7 +2,7 @@
   "name": "front_end",
   "version": "0.5.0",
   "private": false,
-  "homepage": "https://cnsfnatal.github.io/cnsf",
+  "homepage": "https://cnsfnatal.com.br",
   "dependencies": {
     "axios": "^0.19.2",
     "google-maps-react": "^2.0.2",
