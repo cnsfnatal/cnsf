@@ -7,7 +7,7 @@ import Routes from './Routes/index.js'
 // import Layout from './components/Layout'
 // import NavBar from './components/NavBar'
 
-function App() {
+const App: React.FC = () => {
   return (
     <>
       <Routes />
