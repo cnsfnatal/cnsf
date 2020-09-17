@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 export const Container = styled.nav`
   background: transparent;
+  width: 100%;
 
   > ul {
     display: flex;
@@ -22,7 +23,7 @@ export const DropdownStyles = styled.div`
     padding: 20px 25px;
     outline: 0;
     color: #fff;
-    font-size: 22px;
+    font-size: 28px;
 
     transition: opacity 0.2s;
 

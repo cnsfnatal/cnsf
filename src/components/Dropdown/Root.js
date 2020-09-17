@@ -13,7 +13,7 @@ export function DropdownRoot() {
 
   const cachedOption = useMemo(() => getOptionById(cachedId), [
     cachedId,
-    getOptionById,
+    getOptionById
   ])
 
   let [width, height, x] = [0, 0, 0]
@@ -47,11 +47,11 @@ export function DropdownRoot() {
         className="dropdown-root"
         animate={{
           opacity: isActive ? 1 : 0,
-          rotateX: isActive ? 0 : -15,
+          rotateX: isActive ? 0 : -15
         }}
         transition={{
           opacity: { duration: refDuration, delay: 0.05 },
-          rotateX: { duration: refDuration, delay: 0.05 },
+          rotateX: { duration: refDuration, delay: 0.05 }
         }}
       >
         <motion.div
@@ -60,18 +60,18 @@ export function DropdownRoot() {
             x,
             width,
             height,
-            pointerEvents: isActive ? 'unset' : 'none',
+            pointerEvents: isActive ? 'unset' : 'none'
           }}
           transition={{
             ease: 'easeOut',
             x: isFirstInteraction ? { duration: 0 } : refDuration,
             width: {
-              duration: isFirstInteraction ? 0 : refDuration * 0.93,
+              duration: isFirstInteraction ? 0 : refDuration * 0.93
             },
             height: {
-              duration: isFirstInteraction ? 0 : refDuration * 0.93,
+              duration: isFirstInteraction ? 0 : refDuration * 0.93
             },
-            pointerEvents: { delay: 0.05 },
+            pointerEvents: { delay: 0.05 }
           }}
           onHoverStart={() => setHovering(true)}
           onHoverEnd={() => setHovering(false)}
@@ -79,10 +79,10 @@ export function DropdownRoot() {
           <DropdownBackground />
           <motion.div
             animate={{
-              x: -x,
+              x: -x
             }}
           >
-            {options.map((item) => (
+            {options.map(item => (
               <DropdownSection key={item.id} option={item} />
             ))}
           </motion.div>
@@ -98,7 +98,7 @@ function DropdownArrow({ isFirstInteraction }) {
 
   const cachedOption = useMemo(() => getOptionById(cachedId), [
     cachedId,
-    getOptionById,
+    getOptionById
   ])
 
   const x = cachedOption ? cachedOption.optionCenterX : 0
@@ -107,16 +107,16 @@ function DropdownArrow({ isFirstInteraction }) {
     <motion.div
       className="dropdown-arrow"
       initial={{
-        opacity: 0,
+        opacity: 0
       }}
       animate={{
         x,
         pointerEvents: 'none',
-        opacity: x > 0 ? 1 : 0,
+        opacity: x > 0 ? 1 : 0
       }}
       transition={{
         ease: 'easeOut',
-        x: { duration: isFirstInteraction ? 0 : refDuration },
+        x: { duration: isFirstInteraction ? 0 : refDuration }
       }}
     />
   )
@@ -127,7 +127,7 @@ export function DropdownBackground() {
 
   const cachedOption = useMemo(() => getOptionById(cachedId), [
     cachedId,
-    getOptionById,
+    getOptionById
   ])
 
   const backgroundHeight = cachedOption?.backgroundHeight || 0
@@ -136,11 +136,11 @@ export function DropdownBackground() {
     <motion.div
       className="dropdown-background"
       animate={{
-        height: backgroundHeight,
+        height: backgroundHeight
       }}
       transition={{
         ease: 'easeOut',
-        duration: refDuration,
+        duration: refDuration
       }}
     />
   )

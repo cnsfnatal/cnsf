@@ -18,7 +18,7 @@ export function DropdownOption({ name, content: Content, backgroundHeight }) {
     updateOptionProps,
     deleteOptionById,
     setTargetId,
-    targetId,
+    targetId
   } = useContext(Context)
 
   useEffect(() => {
@@ -43,14 +43,14 @@ export function DropdownOption({ name, content: Content, backgroundHeight }) {
         optionDimensions,
         optionCenterX: optionDimensions.x + optionDimensions.width / 2,
         WrappedContent,
-        backgroundHeight,
+        backgroundHeight
       })
 
       setRegistered(true)
     } else if (registered && optionDimensions) {
       updateOptionProps(id, {
         optionDimensions,
-        optionCenterX: optionDimensions.x + optionDimensions.width / 2,
+        optionCenterX: -292 + optionDimensions.x + optionDimensions.width / 2
       })
     }
   }, [
@@ -60,7 +60,7 @@ export function DropdownOption({ name, content: Content, backgroundHeight }) {
     optionDimensions,
     updateOptionProps,
     deleteOptionById,
-    backgroundHeight,
+    backgroundHeight
   ])
 
   useEffect(() => deleteOptionById(id), [deleteOptionById, id])
@@ -69,7 +69,7 @@ export function DropdownOption({ name, content: Content, backgroundHeight }) {
   const handleClose = () => setTargetId(null)
   const handleTouch = () => (window.isMobile = true)
 
-  const handleClick = (e) => {
+  const handleClick = e => {
     e.preventDefault()
 
     return targetId === id ? handleClose() : handleOpen()
