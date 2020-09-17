@@ -1,7 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import Navbar from '../../components/NavBar'
-import Layout, { Wrapper } from '../../components/Layout'
+import Layout from '../../components/Layout'
 
 import Video from '../../assets/cnsf_video.mp4'
 import logo from '../../assets/logo.png'
@@ -13,7 +14,9 @@ const Home: React.FC = () => {
     <Container>
       <Header>
         <Layout>
-          <img src={logo} alt="dark" />
+          <Link to="/">
+            <img src={logo} alt="dark" />
+          </Link>
           <div>
             <Navbar />
           </div>

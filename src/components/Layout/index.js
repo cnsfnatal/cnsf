@@ -5,10 +5,12 @@ const Layout = styled.div`
   width: 100%;
   background: transparent;
 
-  > img {
-    height: 130px;
-    width: 110px;
-    margin-left: 200px;
+  > a {
+    > img {
+      height: 130px;
+      width: 110px;
+      margin-left: 200px;
+    }
   }
 
   > div {

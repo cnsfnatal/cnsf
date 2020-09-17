@@ -50,7 +50,7 @@ export function DropdownOption({ name, content: Content, backgroundHeight }) {
     } else if (registered && optionDimensions) {
       updateOptionProps(id, {
         optionDimensions,
-        optionCenterX: -292 + optionDimensions.x + optionDimensions.width / 2
+        optionCenterX: -310 + optionDimensions.x + optionDimensions.width / 2
       })
     }
   }, [
