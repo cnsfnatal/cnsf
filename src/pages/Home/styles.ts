@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import background from '../../assets/background.png'
+import { motion } from 'framer-motion'
 
 export const Container = styled.div`
   width: 100%;
@@ -33,6 +34,10 @@ export const AboutContainer = styled.div`
   flex-direction: row;
   background: #fff;
   background-image: url(${background});
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   @media (max-width: 990px) {
     padding: 20px 10px;
@@ -84,7 +89,7 @@ export const InfoContainer = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 50px;
+  padding: 20px 50px;
   background: #6861f2;
 
   @media (max-width: 990px) {
@@ -93,7 +98,7 @@ export const InfoContainer = styled.div`
 `
 
 export const InfoCard = styled.div`
-  margin: 20px auto;
+  margin: 0 auto;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -118,9 +123,168 @@ export const InfoCard = styled.div`
     margin: 22px 0;
   }
 
+  > h1 {
+    color: #efeeef;
+  }
+
   > p {
     text-align: center;
     color: #efeeef;
     font-size: 28px;
+  }
+`
+export const SliderContainer = styled.div`
+  padding: 50px;
+  background: #85e687;
+  background-image: url(${background});
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .slider {
+    height: 720px;
+    width: 1280px;
+  }
+`
+export const InfoNumberContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 50px;
+  background: #6861f2;
+
+  @media (max-width: 990px) {
+    flex-direction: column;
+  }
+`
+export const ContactContainer = styled.div`
+  width: 100%;
+  padding: 50px 0;
+  background: #85e687;
+  background-image: url(${background});
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  > form {
+    margin: 0 auto;
+    max-width: 520px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    > h1 {
+      text-align: center;
+      color: #2b73e0;
+      font-size: 64px;
+      text-transform: uppercase;
+      font-family: Concert One;
+      margin-bottom: 24px;
+    }
+
+    > input {
+      margin-top: 12px;
+      width: 100%;
+      height: 52px;
+      border-radius: 50px;
+      border: 1px solid #ddd;
+      padding-right: 12px;
+      padding-left: 12px;
+      font-size: 15px;
+      background: #fff;
+    }
+
+    > button {
+      margin-top: 12px;
+      padding: 10px 20px;
+      height: 52px;
+      width: 100%;
+      border-radius: 14px;
+      border: 0;
+      background: rgb(50, 106, 228);
+      transition: 0.2s;
+      color: #fff;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+
+      &:hover {
+        background: #2553b8;
+      }
+    }
+  }
+`
+
+export const Footer = styled.footer`
+  width: 100%;
+  background: #6861f2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px 0px;
+`
+
+export const FooterCard = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100px;
+
+  > strong {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 12px;
+    font-size: 32px;
+  }
+
+  > aside {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    > p {
+      color: #fff;
+      font-size: 20px;
+    }
+  }
+`
+
+export const SocialContent = styled(motion.div)`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+`
+
+export const SocialButton = styled(motion.a)`
+  width: 42px;
+  height: 42px;
+  background: transparent;
+  border: 2px solid #fff;
+  border-radius: 50%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+
+  transition: background 0.2s;
+
+  &:hover {
+    background: #3027db;
   }
 `
