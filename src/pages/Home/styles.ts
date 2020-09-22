@@ -23,6 +23,33 @@ export const VideoArea = styled.div`
   width: 100%;
   overflow: hidden;
   z-index: 1;
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  > div {
+    position: absolute;
+
+    > h1 {
+      text-transform: uppercase;
+      color: #1258c9;
+      font-size: 64px;
+      letter-spacing: 2px;
+      font-family: Concert One;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    > p {
+      color: #1258c9;
+      font-size: 42px;
+      letter-spacing: 2px;
+      text-align: center;
+      font-family: Concert One;
+    }
+  }
 `
 export const AboutContainer = styled.div`
   width: 100%;
@@ -45,7 +72,7 @@ export const AboutContainer = styled.div`
   }
 `
 
-export const ImageContent = styled.div`
+export const ImageContent = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,7 +88,7 @@ export const ImageContent = styled.div`
     }
   }
 `
-export const TextContainer = styled.div`
+export const TextContainer = styled(motion.div)`
   background: #fff;
   width: 30%;
   border-radius: 15px;
@@ -83,7 +110,7 @@ export const TextContainer = styled.div`
   }
 `
 
-export const InfoContainer = styled.div`
+export const InfoContainer = styled(motion.div)`
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -97,7 +124,7 @@ export const InfoContainer = styled.div`
   }
 `
 
-export const InfoCard = styled.div`
+export const InfoCard = styled(motion.div)`
   margin: 0 auto;
   padding: 20px;
   display: flex;
@@ -287,4 +314,13 @@ export const SocialButton = styled(motion.a)`
   &:hover {
     background: #3027db;
   }
+`
+
+export const MapContainer = styled.div`
+  width: 500px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ccc;
 `
