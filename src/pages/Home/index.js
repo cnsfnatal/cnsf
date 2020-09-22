@@ -15,9 +15,6 @@ import metologiaImage from '../../assets/metologia-image.png'
 import smile from '../../assets/smile.png'
 import idea from '../../assets/idea.png'
 import lamp from '../../assets/lamp.png'
-import frente from '../../assets/frente.jpg'
-import sala from '../../assets/sala.jpg'
-import sala2 from '../../assets/class.jpg'
 
 import {
   Container,
@@ -39,6 +36,11 @@ import {
 
 function Home() {
   const [images, setImages] = useState([])
+  const [nome, setNome] = useState('')
+  const [email, setEmail] = useState('')
+  const [mensagem, setMensagem] = useState('')
+  const [celular, setCelular] = useState('')
+
   const AutoplaySlider = withAutoplay(AwesomeSlider)
 
   useEffect(() => {
@@ -47,12 +49,23 @@ function Home() {
     })
   }, [])
 
-  console.log(images)
+  const handleSubmitEmail = useCallback(
+    async event => {
+      event.preventDefault()
 
-  const handleContanctSubmit = useCallback(event => {
-    event.preventDefault()
-    console.log('submit')
-  }, [])
+      const sendEmail = await api.post('/mail', {
+        email: email,
+        nome: nome,
+        mensagem: mensagem,
+        numero: celular
+      })
+
+      if (sendEmail.status === 200) {
+        alert(`Recebemos sua mensagem ${nome}, entraremos em contato em breve.`)
+      }
+    },
+    [nome, mensagem, celular, email]
+  )
 
   return (
     <Container>
@@ -157,14 +170,36 @@ function Home() {
       </InfoNumberContainer>
 
       <ContactContainer>
-        <form onSubmit={handleContanctSubmit}>
+        <form onSubmit={handleSubmitEmail}>
           <h1>
             Faça sua <br /> pré-matrícula
           </h1>
-          <input type="text" placeholder="E-mail" />
-          <input type="text" placeholder="Nome" />
-          <input type="text" placeholder="Celular" />
-          <input type="text" placeholder="Mensagem" />
+          <input
+            type="text"
+            placeholder="E-mail"
+            onChange={e => setEmail(e.target.value)}
+            required
+          />
+          <input
+            type="text"
+            placeholder="Nome"
+            onChange={e => setNome(e.target.value)}
+            required
+          />
+          <input
+            type="text"
+            placeholder="Celular"
+            onChange={e => setCelular(e.target.value)}
+            required
+          />
+          <input
+            type="text"
+            placeholder="Mensagem"
+            onChange={e => {
+              setMensagem(e.target.value)
+            }}
+            required
+          />
           <button type="submit">Enviar mensagem</button>
         </form>
       </ContactContainer>
