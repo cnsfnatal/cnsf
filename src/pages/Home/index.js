@@ -5,6 +5,9 @@ import { motion } from 'framer-motion'
 import AwesomeSlider from 'react-awesome-slider'
 import withAutoplay from 'react-awesome-slider/dist/autoplay'
 import 'react-awesome-slider/dist/styles.css'
+import { Map, TileLayer, Marker } from 'react-leaflet'
+
+import 'leaflet/dist/leaflet.css'
 import api from '../../services/api'
 
 import Navbar from '../../components/NavBar'
@@ -409,137 +412,142 @@ function Home() {
       </InfoNumberContainer>
 
       <ContactContainer>
-        {formAnimate && (
-          <>
-            <form onSubmit={handleSubmitEmail}>
-              <motion.h1
-                variants={{
-                  hidden: { x: 0, y: 100, opacity: 0 },
-                  visible: {
-                    x: 0,
-                    y: 0,
-                    opacity: 1,
-                    transition: {
-                      delay: 0.4,
-                      when: 'beforeChildren',
-                      staggerChildren: 0.1
-                    }
-                  }
-                }}
-                initial="hidden"
-                animate="visible"
-              >
-                Faça sua <br /> pré-matrícula
-              </motion.h1>
-              <motion.input
-                variants={{
-                  hidden: { x: 0, y: 100, opacity: 0 },
-                  visible: {
-                    x: 0,
-                    y: 0,
-                    opacity: 1,
-                    transition: {
-                      delay: 0.6,
-                      when: 'beforeChildren',
-                      staggerChildren: 0.1
-                    }
-                  }
-                }}
-                initial="hidden"
-                animate="visible"
-                type="text"
-                placeholder="E-mail"
-                onChange={e => setEmail(e.target.value)}
-                required
-              />
-              <motion.input
-                variants={{
-                  hidden: { x: 0, y: 100, opacity: 0 },
-                  visible: {
-                    x: 0,
-                    y: 0,
-                    opacity: 1,
-                    transition: {
-                      delay: 0.8,
-                      when: 'beforeChildren',
-                      staggerChildren: 0.1
-                    }
-                  }
-                }}
-                initial="hidden"
-                animate="visible"
-                type="text"
-                placeholder="Nome"
-                onChange={e => setNome(e.target.value)}
-                required
-              />
-              <motion.input
-                variants={{
-                  hidden: { x: 0, y: 100, opacity: 0 },
-                  visible: {
-                    x: 0,
-                    y: 0,
-                    opacity: 1,
-                    transition: {
-                      delay: 1,
-                      when: 'beforeChildren',
-                      staggerChildren: 0.1
-                    }
-                  }
-                }}
-                initial="hidden"
-                animate="visible"
-                type="text"
-                placeholder="Celular"
-                onChange={e => setCelular(e.target.value)}
-                required
-              />
-              <motion.input
-                variants={{
-                  hidden: { x: 0, y: 100, opacity: 0 },
-                  visible: {
-                    x: 0,
-                    y: 0,
-                    opacity: 1,
-                    transition: {
-                      delay: 1.2,
-                      when: 'beforeChildren',
-                      staggerChildren: 0.1
-                    }
-                  }
-                }}
-                initial="hidden"
-                animate="visible"
-                type="text"
-                placeholder="Mensagem"
-                onChange={e => {
-                  setMensagem(e.target.value)
-                }}
-                required
-              />
-              <motion.button
-                variants={{
-                  hidden: { x: 0, y: 100, opacity: 0 },
-                  visible: {
-                    x: 0,
-                    y: 0,
-                    opacity: 1,
-                    transition: {
-                      delay: 1.4,
-                      when: 'beforeChildren',
-                      staggerChildren: 0.1
-                    }
-                  }
-                }}
-                initial="hidden"
-                animate="visible"
-                type="submit"
-              >
-                Enviar mensagem
-              </motion.button>
-            </form>
-          </>
-        )}
+        <Map
+          center={[-5.7972139, -35.212834]}
+          zoom={15}
+          style={{ width: '60%', height: '100%', borderRadius: '30px' }}
+        >
+          <Marker position={[-5.7677728, -35.2616655]} />
+
+          <TileLayer url="https://a.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+        </Map>
+        <form onSubmit={handleSubmitEmail}>
+          <motion.h1
+            variants={{
+              hidden: { x: 0, y: 100, opacity: 0 },
+              visible: {
+                x: 0,
+                y: 0,
+                opacity: 1,
+                transition: {
+                  delay: 0.4,
+                  when: 'beforeChildren',
+                  staggerChildren: 0.1
+                }
+              }
+            }}
+            initial="hidden"
+            animate="visible"
+          >
+            Faça sua <br /> pré-matrícula
+          </motion.h1>
+          <motion.input
+            variants={{
+              hidden: { x: 0, y: 100, opacity: 0 },
+              visible: {
+                x: 0,
+                y: 0,
+                opacity: 1,
+                transition: {
+                  delay: 0.6,
+                  when: 'beforeChildren',
+                  staggerChildren: 0.1
+                }
+              }
+            }}
+            initial="hidden"
+            animate="visible"
+            type="text"
+            placeholder="E-mail"
+            onChange={e => setEmail(e.target.value)}
+            required
+          />
+          <motion.input
+            variants={{
+              hidden: { x: 0, y: 100, opacity: 0 },
+              visible: {
+                x: 0,
+                y: 0,
+                opacity: 1,
+                transition: {
+                  delay: 0.8,
+                  when: 'beforeChildren',
+                  staggerChildren: 0.1
+                }
+              }
+            }}
+            initial="hidden"
+            animate="visible"
+            type="text"
+            placeholder="Nome"
+            onChange={e => setNome(e.target.value)}
+            required
+          />
+          <motion.input
+            variants={{
+              hidden: { x: 0, y: 100, opacity: 0 },
+              visible: {
+                x: 0,
+                y: 0,
+                opacity: 1,
+                transition: {
+                  delay: 1,
+                  when: 'beforeChildren',
+                  staggerChildren: 0.1
+                }
+              }
+            }}
+            initial="hidden"
+            animate="visible"
+            type="text"
+            placeholder="Celular"
+            onChange={e => setCelular(e.target.value)}
+            required
+          />
+          <motion.input
+            variants={{
+              hidden: { x: 0, y: 100, opacity: 0 },
+              visible: {
+                x: 0,
+                y: 0,
+                opacity: 1,
+                transition: {
+                  delay: 1.2,
+                  when: 'beforeChildren',
+                  staggerChildren: 0.1
+                }
+              }
+            }}
+            initial="hidden"
+            animate="visible"
+            type="text"
+            placeholder="Mensagem"
+            onChange={e => {
+              setMensagem(e.target.value)
+            }}
+            required
+          />
+          <motion.button
+            variants={{
+              hidden: { x: 0, y: 100, opacity: 0 },
+              visible: {
+                x: 0,
+                y: 0,
+                opacity: 1,
+                transition: {
+                  delay: 1.4,
+                  when: 'beforeChildren',
+                  staggerChildren: 0.1
+                }
+              }
+            }}
+            initial="hidden"
+            animate="visible"
+            type="submit"
+          >
+            Enviar mensagem
+          </motion.button>
+        </form>
       </ContactContainer>
 
       <Footer>

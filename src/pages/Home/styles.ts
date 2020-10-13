@@ -2,9 +2,8 @@ import styled from 'styled-components'
 import background from '../../assets/background.png'
 import { motion } from 'framer-motion'
 
-export const Container = styled.div`
+export const Container = styled.main`
   width: 100%;
-  height: 500vh;
   background: #343078;
 `
 
@@ -191,8 +190,14 @@ export const InfoNumberContainer = styled.div`
   }
 `
 export const ContactContainer = styled.div`
-  width: 100%;
-  padding: 50px 0;
+  width: 100vw;
+  height: 75vh;
+  padding: 50px 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   background: #85e687;
   background-image: url(${background});
   background-attachment: fixed;
@@ -202,16 +207,18 @@ export const ContactContainer = styled.div`
 
   > form {
     margin: 0 auto;
-    max-width: 520px;
+    max-width: 600px;
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
 
     > h1 {
       text-align: center;
       color: #2b73e0;
-      font-size: 64px;
+      font-size: 68px;
       text-transform: uppercase;
       font-family: Concert One;
       margin-bottom: 24px;
@@ -220,7 +227,7 @@ export const ContactContainer = styled.div`
     > input {
       margin-top: 12px;
       width: 100%;
-      height: 52px;
+      height: 62px;
       border-radius: 50px;
       border: 1px solid #ddd;
       padding-right: 12px;
@@ -232,9 +239,9 @@ export const ContactContainer = styled.div`
     > button {
       margin-top: 12px;
       padding: 10px 20px;
-      height: 52px;
+      height: 62px;
       width: 100%;
-      border-radius: 14px;
+      border-radius: 50px;
       border: 0;
       background: rgb(50, 106, 228);
       transition: 0.2s;
