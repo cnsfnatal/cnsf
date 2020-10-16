@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const Layout = styled.div`
-  z-index: 20;
+  z-index: 100000;
   width: 100%;
   background: transparent;
 

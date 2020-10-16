@@ -15,7 +15,7 @@ export const Header = styled.header`
   height: 120px;
   position: fixed;
 
-  z-index: 10;
+  z-index: 1000000;
 `
 
 export const VideoArea = styled.div`
