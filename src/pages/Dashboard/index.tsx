@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback, ChangeEvent } from 'react'
 import { FaHome } from 'react-icons/fa'
-import axios from 'axios'
 
 import api from '../../services/api'
 
@@ -19,10 +18,10 @@ import {
   TextCardCard,
   Slider,
   ImageContent,
-  CardNumber,
-  CardNumberCard
+  CardNumber
 } from './styles'
 import { FiCamera } from 'react-icons/fi'
+import { useToast } from '../../hooks/toast'
 
 interface CardTextProps {
   id: number
@@ -44,6 +43,8 @@ interface ImageSliderProps {
 }
 
 const Dashboard: React.FC = () => {
+  const { addToast } = useToast()
+
   const [imageSlider, setImageSlider] = useState<ImageSliderProps[]>([])
   const [titleTextIntroduct, setTitleTextIntroduct] = useState('')
   const [paragraphTextIntroduct, setParagraphTextIntroduct] = useState('')
@@ -131,56 +132,77 @@ const Dashboard: React.FC = () => {
   }, [])
 
   async function handleUpdateTextIntroduct() {
-    axios
-      .put(
-        'http://localhost:4444/introduction-text',
-        {
-          id: 1,
-          title: titleTextIntroduct,
-          paragraph: paragraphTextIntroduct
-        },
-        { maxContentLength: 99999999999, maxBodyLength: 999999999999 }
-      )
-      .then(response => {
-        console.log(response.data)
-      })
+    try {
+      api
+        .put(
+          '/introduction-text',
+          {
+            id: 1,
+            title: titleTextIntroduct,
+            paragraph: paragraphTextIntroduct
+          },
+          { maxContentLength: 99999999999, maxBodyLength: 999999999999 }
+        )
+        .then(response => {
+          addToast({
+            type: 'success',
+            title: 'Alteração realizada com sucesso'
+          })
+        })
+    } catch (err) {
+      addToast({ type: 'error', title: 'Falha ao realizar alteração' })
+    }
   }
 
   const handleUpdateCardText = useCallback(
     async (id: number, title?: string, paragraph?: string) => {
-      const response = await api.put('/card-text', {
-        id,
-        title,
-        paragraph
-      })
-
-      console.log(response.data)
+      try {
+        await api.put('/card-text', {
+          id,
+          title,
+          paragraph
+        })
+        addToast({ type: 'success', title: 'Alteração realizada com sucesso' })
+      } catch {
+        addToast({ type: 'error', title: 'Falha ao realizar alteração' })
+      }
     },
     []
   )
 
   async function handleDeleteImage(id: any) {
-    await api.put('/image', {
-      id
-    })
+    try {
+      await api.put('/image', {
+        id
+      })
 
-    const response = await api.get('/image')
+      const response = await api.get('/image')
 
-    setImageSlider(response.data)
+      setImageSlider(response.data)
+      addToast({ type: 'success', title: 'Alteração realizada com sucesso' })
+    } catch {
+      addToast({ type: 'error', title: 'Falha ao realizar alteração' })
+    }
   }
 
   const handleAvatarChange = useCallback(
     async (e: ChangeEvent<HTMLInputElement>) => {
       if (e.target.files) {
-        const data = new FormData()
+        try {
+          const data = new FormData()
 
-        data.append('image', e.target.files[0])
+          data.append('image', e.target.files[0])
 
-        await api.patch('/image', data)
+          await api.patch('/image', data)
 
-        const response = await api.get('/image')
+          const response = await api.get('/image')
 
-        setImageSlider(response.data)
+          setImageSlider(response.data)
+
+          addToast({ type: 'success', title: 'Imagem adicionada com sucesso' })
+        } catch {
+          addToast({ type: 'error', title: 'Falha ao adicionar imagem ' })
+        }
       }
     },
     []
@@ -191,15 +213,21 @@ const Dashboard: React.FC = () => {
     number_text: string,
     paragraph: string
   ) {
-    await api.put('/card-number', {
-      id,
-      number_text: number_text,
-      paragraph
-    })
+    try {
+      await api.put('/card-number', {
+        id,
+        number_text: number_text,
+        paragraph
+      })
 
-    const response = await api.get('/card-number')
+      const response = await api.get('/card-number')
 
-    setCardNumber(response.data)
+      setCardNumber(response.data)
+
+      addToast({ type: 'success', title: 'Alteração realizada com sucesso' })
+    } catch {
+      addToast({ type: 'error', title: 'Falha ao realizar alteração' })
+    }
   }
 
   return (

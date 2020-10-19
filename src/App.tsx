@@ -1,6 +1,7 @@
 import React from 'react'
 
 import './styles/global.scss'
+import AppProvider from './hooks'
 
 import Routes from './Routes'
 
@@ -10,7 +11,9 @@ import Routes from './Routes'
 const App: React.FC = () => {
   return (
     <>
-      <Routes />
+      <AppProvider>
+        <Routes />
+      </AppProvider>
     </>
   )
 }

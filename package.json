@@ -12,6 +12,8 @@
     "@types/react-dom": "^16.9.8",
     "@types/react-leaflet": "^2.5.2",
     "@types/styled-components": "^5.1.3",
+    "@unform/core": "^2.1.3",
+    "@unform/web": "^2.1.3",
     "axios": "^0.20.0",
     "framer-motion": "^2.1.2",
     "leaflet": "^1.7.1",
@@ -24,8 +26,11 @@
     "react-leaflet": "^2.7.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
+    "react-spring": "^8.0.27",
     "styled-components": "^5.1.1",
-    "typescript": "^4.0.2"
+    "typescript": "^4.0.2",
+    "uuidv4": "^6.2.4",
+    "yup": "^0.29.3"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -50,6 +55,7 @@
   },
   "devDependencies": {
     "@types/react-router-dom": "^5.1.5",
+    "@types/yup": "^0.29.8",
     "@typescript-eslint/eslint-plugin": "^3.7.0",
     "@typescript-eslint/parser": "^3.7.0",
     "eslint": "^6.6.0",

@@ -5,7 +5,6 @@ import { motion } from 'framer-motion'
 import AwesomeSlider from 'react-awesome-slider'
 import withAutoplay from 'react-awesome-slider/dist/autoplay'
 import 'react-awesome-slider/dist/styles.css'
-import { Map, TileLayer, Marker } from 'react-leaflet'
 
 import 'leaflet/dist/leaflet.css'
 import api from '../../services/api'
@@ -16,13 +15,6 @@ import Layout from '../../components/Layout'
 import Video from '../../assets/cnsf_video.mp4'
 import logo from '../../assets/logo.png'
 import metologiaImage from '../../assets/metologia-image.png'
-import smile from '../../assets/smile.png'
-import idea from '../../assets/idea.png'
-import lamp from '../../assets/lamp.png'
-import school from '../../assets/school.svg'
-import study from '../../assets/study.svg'
-import teacher from '../../assets/teacher.svg'
-import training from '../../assets/training.svg'
 
 import {
   Container,
@@ -81,8 +73,41 @@ function Home() {
   const [inforCardAnimate, setInforCardAnimate] = useState(false)
   const [inforCardNumberAnimate, setInforCardNumberAnimate] = useState(false)
   const [formAnimate, setFormAnimate] = useState(false)
+  const [textIntroduction, setTextIntroduction] = useState([])
+  const [cardText, setCardText] = useState([])
+  const [cardNumber, setCardNumber] = useState([])
 
   const AutoplaySlider = withAutoplay(AwesomeSlider)
+
+  useEffect(() => {
+    async function getCardNumberIntroduciton() {
+      const response = await api.get('/card-number')
+
+      setCardNumber(response.data)
+    }
+
+    getCardNumberIntroduciton()
+  }, [])
+
+  useEffect(() => {
+    async function getCardTextIntroduciton() {
+      const response = await api.get('/card-text')
+
+      setCardText(response.data)
+    }
+
+    getCardTextIntroduciton()
+  }, [])
+
+  useEffect(() => {
+    async function getTextIntroduciton() {
+      const response = await api.get('/introduction-text')
+
+      setTextIntroduction(response.data)
+    }
+
+    getTextIntroduciton()
+  }, [])
 
   useEffect(() => {
     api.get('/image').then(image => {
@@ -211,15 +236,8 @@ function Home() {
               initial="hidden"
               animate="visible"
             >
-              <strong>Metologia</strong>
-              <p>
-                Acreditamos que a escola deve ser o lugar onde os alunos
-                despertem sua criatividade, deem vidas aos seus sonhos e
-                construam o seu próprio futuro. Além disso, atuamos com
-                abordagens de ensino capazes de estimular diversificados
-                pensamento na construção de conhecimentos, projetos e propósitos
-                de vida!
-              </p>
+              <strong>{textIntroduction[0]?.title}</strong>
+              <p>{textIntroduction[0]?.paragraph}</p>
             </TextContainer>
           </>
         )}
@@ -228,77 +246,30 @@ function Home() {
       <InfoContainer>
         {inforCardAnimate && (
           <>
-            <InfoCard
-              variants={{
-                hidden: { x: 0, y: 100, opacity: 0 },
-                visible: {
-                  x: 0,
-                  y: 0,
-                  opacity: 1,
-                  transition: {
-                    delay: 0.4,
-                    when: 'beforeChildren',
-                    staggerChildren: 0.1
+            {cardText.map(card => (
+              <InfoCard
+                key={card.id}
+                variants={{
+                  hidden: { x: 0, y: 100, opacity: 0 },
+                  visible: {
+                    x: 0,
+                    y: 0,
+                    opacity: 1,
+                    transition: {
+                      delay: 0.4,
+                      when: 'beforeChildren',
+                      staggerChildren: 0.1
+                    }
                   }
-                }
-              }}
-              initial="hidden"
-              animate="visible"
-            >
-              <strong>Competências emocionais</strong>
-              <img src={smile} alt="Sorriso" />
-              <p>
-                O trabalho em equipe, a empatia, a comunicação são pilares
-                fundamentais para o crescimento pessoal e profissional
-              </p>
-            </InfoCard>
-
-            <InfoCard
-              variants={{
-                hidden: { x: 0, y: 100, opacity: 0 },
-                visible: {
-                  x: 0,
-                  y: 0,
-                  opacity: 1,
-                  transition: {
-                    delay: 0.6,
-                    when: 'beforeChildren',
-                    staggerChildren: 0.1
-                  }
-                }
-              }}
-              initial="hidden"
-              animate="visible"
-            >
-              <strong>Mudança de Pensamento</strong>
-              <img src={idea} alt="Ideia" />
-              <p>Despertando criações sem barreiras</p>
-            </InfoCard>
-
-            <InfoCard
-              variants={{
-                hidden: { x: 0, y: 100, opacity: 0 },
-                visible: {
-                  x: 0,
-                  y: 0,
-                  opacity: 1,
-                  transition: {
-                    delay: 0.8,
-                    when: 'beforeChildren',
-                    staggerChildren: 0.1
-                  }
-                }
-              }}
-              initial="hidden"
-              animate="visible"
-            >
-              <strong>Ambientes de inovação</strong>
-              <img src={lamp} alt="Lâmpada" />
-              <p>
-                Oficinas em ambientes reais, possibilitando novas crenças e
-                quebra de paradigmas.
-              </p>
-            </InfoCard>
+                }}
+                initial="hidden"
+                animate="visible"
+              >
+                <strong>{card.tile}</strong>
+                <img src={card.url} alt={card.title} />
+                <p>{card.paragraph}</p>
+              </InfoCard>
+            ))}
           </>
         )}
       </InfoContainer>
@@ -320,107 +291,35 @@ function Home() {
       <InfoNumberContainer>
         {inforCardNumberAnimate && (
           <>
-            <InfoCard
-              variants={{
-                hidden: { x: 0, y: 100, opacity: 0 },
-                visible: {
-                  x: 0,
-                  y: 0,
-                  opacity: 1,
-                  transition: {
-                    delay: 0.4,
-                    when: 'beforeChildren',
-                    staggerChildren: 0.1
+            {cardNumber.map(card => (
+              <InfoCard
+                key={card.id}
+                variants={{
+                  hidden: { x: 0, y: 100, opacity: 0 },
+                  visible: {
+                    x: 0,
+                    y: 0,
+                    opacity: 1,
+                    transition: {
+                      delay: 0.4,
+                      when: 'beforeChildren',
+                      staggerChildren: 0.1
+                    }
                   }
-                }
-              }}
-              initial="hidden"
-              animate="visible"
-            >
-              <img src={study} alt="Sorriso" />
-              <h1>+ de 1000</h1>
-              <p>Alunos impactados</p>
-            </InfoCard>
-
-            <InfoCard
-              variants={{
-                hidden: { x: 0, y: 100, opacity: 0 },
-                visible: {
-                  x: 0,
-                  y: 0,
-                  opacity: 1,
-                  transition: {
-                    delay: 0.6,
-                    when: 'beforeChildren',
-                    staggerChildren: 0.1
-                  }
-                }
-              }}
-              initial="hidden"
-              animate="visible"
-            >
-              <img src={training} alt="Ideia" />
-              <h1>30</h1>
-              <p>Intervenções</p>
-            </InfoCard>
-
-            <InfoCard
-              variants={{
-                hidden: { x: 0, y: 100, opacity: 0 },
-                visible: {
-                  x: 0,
-                  y: 0,
-                  opacity: 1,
-                  transition: {
-                    delay: 0.8,
-                    when: 'beforeChildren',
-                    staggerChildren: 0.1
-                  }
-                }
-              }}
-              initial="hidden"
-              animate="visible"
-            >
-              <img src={teacher} alt="Lâmpada" />
-              <h1>+ de 20</h1>
-              <p>Professores impactados</p>
-            </InfoCard>
-
-            <InfoCard
-              variants={{
-                hidden: { x: 0, y: 100, opacity: 0 },
-                visible: {
-                  x: 0,
-                  y: 0,
-                  opacity: 1,
-                  transition: {
-                    delay: 1,
-                    when: 'beforeChildren',
-                    staggerChildren: 0.1
-                  }
-                }
-              }}
-              initial="hidden"
-              animate="visible"
-            >
-              <img src={school} alt="Ideia" />
-              <h1>5</h1>
-              <p>Participando ativamente do programa</p>
-            </InfoCard>
+                }}
+                initial="hidden"
+                animate="visible"
+              >
+                <img src={card.url} alt={card.title} />
+                <h1>{card.number_text}</h1>
+                <p>{card.paragraph}</p>
+              </InfoCard>
+            ))}
           </>
         )}
       </InfoNumberContainer>
 
       <ContactContainer>
-        <Map
-          center={[-5.7972139, -35.212834]}
-          zoom={15}
-          style={{ width: '60%', height: '100%', borderRadius: '30px' }}
-        >
-          <Marker position={[-5.7677728, -35.2616655]} />
-
-          <TileLayer url="https://a.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-        </Map>
         <form onSubmit={handleSubmitEmail}>
           <motion.h1
             variants={{
