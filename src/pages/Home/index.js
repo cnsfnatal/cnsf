@@ -188,7 +188,7 @@ function Home() {
             animate="visible"
             variants={itemAnimationUpY}
           >
-            Uma educação para a inovação!
+            Educando através da Paz e do Bem
           </motion.p>
         </div>
         <video autoPlay muted loop className="video-banner">

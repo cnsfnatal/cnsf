@@ -34,19 +34,23 @@ export const VideoArea = styled.div`
     > h1 {
       text-transform: uppercase;
       color: #1258c9;
-      font-size: 64px;
+      font-size: 74px;
       letter-spacing: 2px;
       font-family: Concert One;
       text-align: center;
       margin-bottom: 12px;
+      -webkit-text-stroke-color: #e3dede;
+      -webkit-text-stroke-width: 2.00px; 
     }
 
     > p {
       color: #1258c9;
-      font-size: 42px;
+      font-size: 54px;
       letter-spacing: 2px;
       text-align: center;
       font-family: Concert One;
+      -webkit-text-stroke-color: #e3dede;
+      -webkit-text-stroke-width: 2.00px; 
     }
   }
 `
