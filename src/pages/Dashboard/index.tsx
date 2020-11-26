@@ -479,14 +479,14 @@ const Dashboard: React.FC = () => {
               <input
                 placeholder={cardNumber[2] ? cardNumber[2].number_text : ''}
                 onChange={e => {
-                  setCardNumberTitle1(e.target.value)
+                  setCardNumberTitle3(e.target.value)
                 }}
               ></input>
 
               <textarea
                 placeholder={cardNumber[2] ? cardNumber[2].paragraph : ''}
                 onChange={e => {
-                  setCardNumberParagraph1(e.target.value)
+                  setCardNumberParagraph3(e.target.value)
                 }}
               ></textarea>
 
@@ -512,14 +512,14 @@ const Dashboard: React.FC = () => {
               <input
                 placeholder={cardNumber[3] ? cardNumber[3].number_text : ''}
                 onChange={e => {
-                  setCardNumberTitle1(e.target.value)
+                  setCardNumberTitle4(e.target.value)
                 }}
               ></input>
 
               <textarea
                 placeholder={cardNumber[3] ? cardNumber[3].paragraph : ''}
                 onChange={e => {
-                  setCardNumberParagraph1(e.target.value)
+                  setCardNumberParagraph4(e.target.value)
                 }}
               ></textarea>
 
