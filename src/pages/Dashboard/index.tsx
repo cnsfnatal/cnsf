@@ -42,6 +42,12 @@ interface ImageSliderProps {
   url: string
 }
 
+interface EstructuteTextProps {
+  id: number
+  title: string
+  paragraph: string
+}
+
 const Dashboard: React.FC = () => {
   const { addToast } = useToast()
 
@@ -64,6 +70,21 @@ const Dashboard: React.FC = () => {
   const [cardNumberParagraph2, setCardNumberParagraph2] = useState('')
   const [cardNumberParagraph3, setCardNumberParagraph3] = useState('')
   const [cardNumberParagraph4, setCardNumberParagraph4] = useState('')
+
+  const [estructureText, setEstructureText] = useState<EstructuteTextProps>()
+
+  useEffect(() => {
+    async function getEstructureText() {
+      const response = await api.get<EstructuteTextProps>('/estrucutue-text')
+
+      setEstructureText(response.data)
+
+    }
+
+    getEstructureText()
+  }, [])
+
+  console.log(estructureText)
 
   useEffect(() => {
     async function getCardNumber() {
@@ -229,6 +250,8 @@ const Dashboard: React.FC = () => {
       addToast({ type: 'error', title: 'Falha ao realizar alteração' })
     }
   }
+
+
 
   return (
     <Container>

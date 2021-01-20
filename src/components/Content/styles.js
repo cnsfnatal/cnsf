@@ -28,6 +28,19 @@ export const ProductsWrapper = styled.div`
       display: flex;
       align-items: center;
 
+      a {
+        ${hover}
+        margin-left: 19px;
+
+        h3 {
+          ${h3}
+        }
+        p {
+          ${p}
+          margin-top: 10px;
+        }
+      }
+
       div {
         ${hover}
         margin-left: 19px;

@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 import { ProductsWrapper } from './styles'
 
@@ -16,10 +17,10 @@ export const Products = () => (
       <li>
         <span className="billing" />
 
-        <div>
+        <Link to="/estrutura">
           <h3>Estrutura</h3>
           <p>Conheça a estrutura de nossa escola</p>
-        </div>
+        </Link>
       </li>
       <li>
         <span className="connect" />
