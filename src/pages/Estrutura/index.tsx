@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Layout from '../../components/Layout';
 import Navbar from '../../components/NavBar';
+import { client } from '../../lib/prismic'
+import Prismic from 'prismic-javascript'
+import { Document } from 'prismic-javascript/types/documents'
+import PrismicDOM from 'prismic-dom'
 
 import { 
   AboutContainer,
@@ -13,10 +17,47 @@ import {
 } from './styles';
 
 import logo from '../../assets/logo.png'
+
 import fachada from '../../assets/fachada.png'
 
+interface EstrutraProps {
+  aboutme: any
+  title: any
+}
 
-const Estrutura: React.FC = () => {
+const Estrutura = () => {
+  const [cards, setCards] = useState<Document[]>([])
+  const [estrutura, setEstrutura] = useState<EstrutraProps>()
+
+  useEffect(() => {
+    async function handleGetImages() {
+      const response = await client().query([
+        Prismic.Predicates.at('document.type', 'imageestrutura')
+      ]) 
+
+      setCards(response.results)
+    }
+
+    handleGetImages()
+  }, [])
+
+  console.log(cards)
+
+
+  useEffect(() => {
+    async function handleGetCards() {
+      const response = await client().query([
+        Prismic.Predicates.at('document.type', 'estruturatext')
+      ])
+      
+      // console.log(response)
+      setEstrutura(response.results[0].data)
+    }
+
+    handleGetCards()
+  }, [])
+
+
   return (
     <Container>
       <Header>
@@ -50,78 +91,24 @@ const Estrutura: React.FC = () => {
               initial="hidden"
               animate="visible"
             >
-              <strong>Estrutura</strong>
+              <strong>  {estrutura  ?  PrismicDOM.RichText.asText(estrutura?.title) : 'Estrutura' }</strong>
               <p>
-              O Colégio Nossa Senhora de Fátima tem uma estrutura 
-              planejada estrategicamente para atender cada fase de desenvolvimento 
-              dos nossos alunos, distribuídos nos níveis da Educação Infantil, 
-              Ensino Fundamental I e Ensino Fundamental II, com salas de aulas de áudios-visuais, informática, 
-              laboratório de química, física, matemática e xadrez. Além disso, disponibilizamos 
-              uma sala de motricidade ampla, 
-              lógica-matemática, leitura, biblioteca, sala de dança, karatê, brinquedoteca, 
-              sala de repouso, sala de oficina de artes, 
-              quadra poliesportiva, espaço relacionais abertos e playground.
+              {estrutura  ?  PrismicDOM.RichText.asText(estrutura?.aboutme) : 'Descrição' }
               </p>
             </TextContainer>
 
           <ImagesWrapper>
-            <ImageContainer>
-              <img src={fachada} alt="Fachada"/>
-              <strong>Fachada</strong>
+
+            {cards.map((card => (
+
+            <ImageContainer key={card.id} >
+              <img src={card.data.image.url} alt="Fachada"/>
+              <strong>{cards  ?  PrismicDOM.RichText.asText(card.data.title) : 'Carregando...' }</strong>
             </ImageContainer>
 
-            <ImageContainer>
-              <img src={fachada} alt="Fachada"/>
-              <strong>Fachada</strong>
-            </ImageContainer>
+            )))}
 
-            <ImageContainer>
-              <img src={fachada} alt="Fachada"/>
-              <strong>Fachada</strong>
-            </ImageContainer>
 
-            <ImageContainer>
-              <img src={fachada} alt="Fachada"/>
-              <strong>Fachada</strong>
-            </ImageContainer>
-
-            <ImageContainer>
-              <img src={fachada} alt="Fachada"/>
-              <strong>Fachada</strong>
-            </ImageContainer>
-
-            <ImageContainer>
-              <img src={fachada} alt="Fachada"/>
-              <strong>Fachada</strong>
-            </ImageContainer>
-
-            <ImageContainer>
-              <img src={fachada} alt="Fachada"/>
-              <strong>Fachada</strong>
-            </ImageContainer>
-            <ImageContainer>
-              <img src={fachada} alt="Fachada"/>
-              <strong>Fachada</strong>
-            </ImageContainer>
-            <ImageContainer>
-              <img src={fachada} alt="Fachada"/>
-              <strong>Fachada</strong>
-            </ImageContainer>
-
-            <ImageContainer>
-              <img src={fachada} alt="Fachada"/>
-              <strong>Fachada</strong>
-            </ImageContainer>
-
-            <ImageContainer>
-              <img src={fachada} alt="Fachada"/>
-              <strong>Fachada</strong>
-            </ImageContainer>
-
-            <ImageContainer>
-              <img src={fachada} alt="Fachada"/>
-              <strong>Fachada</strong>
-            </ImageContainer>
           </ImagesWrapper>
 
 
